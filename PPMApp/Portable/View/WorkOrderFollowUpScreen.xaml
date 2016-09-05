@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Portable;assembly=PPMApp.Portable"
+             x:Class="Portable.WorkOrderFollowUpScreen" BackgroundImage="bg.jpg" Title="Work Order FollowUp" Padding="11">
+  <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+    <StackLayout VerticalOptions="StartAndExpand">
+      <Label Text="Assigned" TextColor="#00d0d2"></Label>
+      <Entry Text="{Binding Assign}" TextColor="#00d0d2" ></Entry>
+      
+      <Label Text="Date Completed" TextColor="#00d0d2"></Label>
+      <DatePicker
+                Date="{Binding PropertyDate}"
+                MinimumDate ="{Binding PropertyMinimumDate}"
+                MaximumDate = "{Binding PropertyMaximumDate}"/>
+      
+      <Label Text="Labor" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+           Title="Select Labor"
+           TextColor="#00d0d2"
+           DisplayMemberPath="LabourName"
+           SelectedValuePath="LabourID"
+                   ItemsSource="{Binding LabourList}"
+                   SelectedValue="{Binding Path=LBSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="Parts/Supply" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+           Title=" Select Parts/Supply"
+           TextColor="#00d0d2"
+           DisplayMemberPath="Name"
+           SelectedValuePath="Name"
+                   ItemsSource="{Binding PartSupplyList}"
+                   SelectedValue="{Binding Path=PSSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="Note" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Note}" TextColor="#00d0d2" ></Editor>
+
+      <Button Text="Commit"
+							Command="{Binding SaveCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

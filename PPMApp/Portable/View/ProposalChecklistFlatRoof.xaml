@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Portable.ProposalChecklistFlatRoof">
+  <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+    <StackLayout>
+      <Label Text="Insualtion" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Insualtion}" TextColor="White"></Editor>
+
+      <Label Text="Deck" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Deck}" TextColor="White"></Editor>
+
+      <Label Text="NoOfDrains" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding NoOfDrains}" TextColor="White" Keyboard="Numeric"></Editor>
+
+      <Label Text="Protrusions" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Protrusions}" TextColor="White"></Editor>
+
+      <Label Text="BaseFlashing" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding BaseFlashing}" TextColor="White"></Editor>
+      
+      <Label Text="CounterFlashing" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding CounterFlashing}" TextColor="White"></Editor>
+
+      <Label Text="Asbestos" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Asbestos}" TextColor="White"></Editor>
+
+      <Label Text="Subroofs" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Subroofs}" TextColor="White"></Editor>
+
+      <Label Text="Interiorparapet" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Interiorparapet}" TextColor="White"></Editor>
+
+      <Label Text="Coping" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Coping}" TextColor="White"></Editor>
+
+      <Label Text="Railings" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Railings}" TextColor="White"></Editor>
+      
+      <Label Text="Access" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Access}" TextColor="White"></Editor>
+
+      <Label Text="Chimneys" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Chimneys}" TextColor="White"></Editor>
+
+      <Label Text="DumpSters" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding DumpSters}" TextColor="White"></Editor>
+
+      <Button Text="Save Detail"
+							Command="{Binding SaveCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

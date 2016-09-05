@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Portable.ProposalChecklistExteriorWallsScreen">
+  <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+    <StackLayout>
+      <Label Text="SidewalkBridge" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding SidewalkBridge}" TextColor="White"></Editor>
+
+      <Label Text="Scaffold" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Scaffold}" TextColor="White"></Editor>
+
+      <Label Text="Hoist" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Hoist}" TextColor="White"></Editor>
+
+      <Label Text="No of Drops" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding NoofDrops}" TextColor="White" Keyboard="Numeric"></Editor>
+
+      <Label Text="No of Lintels" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding NoofLintels}" TextColor="White" Keyboard="Numeric"></Editor>
+
+      <Label Text="Qty Caulking" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding QtyCaulking}" TextColor="White"></Editor>
+
+      <Label Text="Dutchman Repairs" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding DutchmanRepairs}" TextColor="White"></Editor>
+
+      <Label Text="No Sills Replaces Capped" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding NoSillsReplacesCapped}" TextColor="White"></Editor>
+
+      <Label Text="Metal Panels Replaced" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding MetalPanelsReplaced}" TextColor="White"></Editor>
+
+      <Label Text="Stone Replacement" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding StoneReplacement}" TextColor="White"></Editor>
+
+      <Label Text="Brick Replacement" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding BrickReplacement}" TextColor="White"></Editor>
+
+      <Label Text="Chutes" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Chutes}" TextColor="White"></Editor>
+
+      <Label Text="No of Wythes" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding NoofWythes}" TextColor="White" Keyboard="Numeric"></Editor>
+
+      <Label Text="Dumpsters" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Dumpsters}" TextColor="White"></Editor>
+
+      <Button Text="Commit"
+							Command="{Binding SaveCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

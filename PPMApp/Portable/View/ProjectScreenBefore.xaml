@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Portable;assembly=PPMApp.Portable"  
+             x:Class="Portable.ProjectScreenBefore" BackgroundImage="bg.jpg" Title="Project Screen (Before)" Padding="11">
+  <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+    <StackLayout>
+      <Label Text="System Element" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select System Element"
+            TextColor="White"
+            DisplayMemberPath="SystemElementName"
+            SelectedValuePath="SystemElementID"
+                    ItemsSource="{Binding SystemElementList}"
+                    SelectedValue="{Binding Path=SESelectedValue, Mode=TwoWay}" />
+
+      <Label Text="Height" TextColor="#00d0d2"></Label>
+      <Entry Text="{Binding Height}" TextColor="White" Keyboard="Numeric"></Entry>
+
+      <Label Text="Width" TextColor="#00d0d2"></Label>
+      <Entry Text="{Binding Width}" TextColor="White" Keyboard="Numeric"></Entry>
+
+      <Label Text="Material" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Material"
+            TextColor="White"
+            DisplayMemberPath="MaterialName"
+            SelectedValuePath="MaterialID"
+                    ItemsSource="{Binding MaterialList}"
+                    SelectedValue="{Binding Path=MATSelectedValue, Mode=TwoWay}" />
+
+
+      <Label Text="Detail" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Detail}" TextColor="White"></Editor>
+
+      <Button Text="Upload Photo"
+             Command="{Binding PhotoCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>
+
+      <Button Text="Detail"
+             Command="{Binding DetailCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>
+
+      <Button Text="Deficiency/Repair Screen"
+             Command="{Binding DeficiencyRepairCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>      
+      
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Portable;assembly=PPMApp.Portable"             
+             x:Class="Portable.FCASystem" Title="FCA System" BackgroundImage="bg.jpg" Padding="11">
+  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+  <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+    <StackLayout>
+      <Label Text="Building System" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Building System"
+            TextColor="White"
+            DisplayMemberPath="BuildingSystemName"
+            SelectedValuePath="BuildingSystemID"
+                    ItemsSource="{Binding BuildingSystemList}"
+                    SelectedValue="{Binding Path=BSSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="System Element" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Building System"
+            TextColor="White"
+            DisplayMemberPath="SystemElementName"
+            SelectedValuePath="SystemElementID"
+                    ItemsSource="{Binding SystemElementList}"
+                    SelectedValue="{Binding Path=SESelectedValue, Mode=TwoWay}" />
+
+  <Label Text="System Type" TextColor="#00d0d2"></Label>
+  <controls:BindablePicker
+				Title="Select System Type"
+        TextColor="White"
+				DisplayMemberPath="SystemElementTypeName"
+				SelectedValuePath="SystemTypeID"
+                ItemsSource="{Binding SystemTypeList}"
+                SelectedValue="{Binding Path=STSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="Rating" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Building System"
+            TextColor="White"
+            DisplayMemberPath="Name"
+            SelectedValuePath="Value"
+                    ItemsSource="{Binding RatingList}"
+                    SelectedValue="{Binding Path=RTSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="Detail" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Detail}" HeightRequest="120" TextColor="White" ></Editor>
+
+      <!--<Label Text="Deficiency/Repair" TextColor="#00d0d2"></Label>-->
+      
+      <!--<controls:BindablePicker
+            Title="Select Building System"
+            TextColor="#00d0d2"
+            DisplayMemberPath="RepairSelectedValue"
+            SelectedValuePath="RepairSelectedValue"
+                    ItemsSource="{Binding isRepairList}"
+                    SelectedValue="{Binding Path=RepairSelectedValue, Mode=TwoWay}" />-->
+
+      <Button Text="Next"
+							Command="{Binding SaveCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

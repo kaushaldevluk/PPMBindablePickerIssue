@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Portable.FirstScreen" Title="PPM" BackgroundImage="bg.jpg" Padding="11">
+  <ScrollView  Orientation = "Vertical" VerticalOptions="CenterAndExpand">
+    <StackLayout VerticalOptions="CenterAndExpand">
+      <Label Text="11 Records are Pending for Upload" TextColor="White" HorizontalOptions="Center" Margin="15"></Label>
+
+      <Button Text="Upload Now"
+              BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold" Margin="15"/>
+      <Button Text="Add New Record"
+              Command="{Binding AddNewCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold" Margin="15"/>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

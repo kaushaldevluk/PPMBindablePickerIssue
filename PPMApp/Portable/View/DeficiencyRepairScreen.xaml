@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Portable;assembly=PPMApp.Portable"  
+             x:Class="Portable.DeficiencyRepairScreen">
+  <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+    <StackLayout>
+      <Label Text="Detail" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Detail}" TextColor="White"></Editor>
+
+      <Label Text="Quantity" TextColor="#00d0d2"></Label>
+      <Entry Text="{Binding Quantity}" TextColor="White" Keyboard="Numeric"></Entry>
+
+      <Label Text="Unit" TextColor="#00d0d2"></Label>
+      <Entry Text="{Binding Unit}" TextColor="White" Keyboard="Numeric"></Entry>
+
+      <Label Text="WorkArea" TextColor="#00d0d2"></Label>
+      <Entry Text="{Binding WorkArea}" TextColor="White" Keyboard="Numeric"></Entry>
+
+      <Label Text="Note" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Note}" TextColor="White"></Editor>
+
+      <Button Text="Next"
+             Command="{Binding SaveCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>
+      
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

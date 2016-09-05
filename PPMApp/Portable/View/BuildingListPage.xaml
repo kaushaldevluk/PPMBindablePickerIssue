@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:telerikListView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             x:Class="Portable.BuildingListPage" BackgroundImage="bg.jpg" Padding="11">
+  
+<ContentPage.Content>
+    <Grid BackgroundColor="Transparent">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+
+   
+
+    <telerikDataControls:RadListView x:Name="listView" Grid.Row="1" IsItemSwipeEnabled="True" SwipeThreshold="10" SwipeOffset="150,0" SelectionMode="None">
+      
+<telerikDataControls:RadListView.SelectedItemStyle>
+  <telerikListView:ListViewItemStyle BackgroundColor="Black" BorderLocation="Bottom" BorderColor="#A0967D" BorderWidth="2"/>
+</telerikDataControls:RadListView.SelectedItemStyle>
+<telerikDataControls:RadListView.ItemStyle>
+  <telerikListView:ListViewItemStyle BackgroundColor="Transparent" BorderLocation="Bottom" BorderColor="#A0967D" BorderWidth="2"/>
+</telerikDataControls:RadListView.ItemStyle>
+<telerikDataControls:RadListView.PressedItemStyle>
+  <telerikListView:ListViewItemStyle BackgroundColor="Black" BorderLocation="Bottom" BorderColor="#A0967D" BorderWidth="2"/>
+</telerikDataControls:RadListView.PressedItemStyle>
+
+      
+<!--<telerikDataControls:RadListView.ItemTemplate>
+  <DataTemplate>
+    <telerikListView:ListViewTemplateCell>
+      <telerikListView:ListViewTemplateCell.View>
+        <Grid Padding="0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          
+          <StackLayout Padding="0,0,0,0" Grid.Column="1">
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>              
+              --><!--<Image Source="{Binding IsFavourite, Converter={StaticResource FavouriteImageConverter}}" Grid.Column="1"/>--><!--
+            </Grid>
+            <Label Text="{Binding Name}" TextColor="#00d0d2" LineBreakMode="TailTruncation" FontSize="Medium"/>
+            <StackLayout Orientation="Horizontal" Padding="0,0,0,0">              
+              <Label TextColor="#806015" Text="Location" FontAttributes="Italic" FontSize="Small"/>
+              <Label TextColor="#806015" Text="{Binding Location}" LineBreakMode="TailTruncation" FontSize="Small"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="0,0,0,0">
+              <Label TextColor="#806015" Text="Sync" FontAttributes="Italic" FontSize="Small"/>
+              <Label TextColor="#A0967D" Text="{Binding sync}" LineBreakMode="TailTruncation" FontSize="Small"/>
+            </StackLayout>
+          </StackLayout>
+        </Grid>
+      </telerikListView:ListViewTemplateCell.View>
+    </telerikListView:ListViewTemplateCell>
+  </DataTemplate>
+</telerikDataControls:RadListView.ItemTemplate>-->
+      <!--<telerikDataControls:RadListView.GroupHeaderTemplate>
+        <DataTemplate>
+          <telerikListView:ListViewTemplateCell>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Column="1" BackgroundColor="White">                  
+                  <Label TextColor="Gray" Text="{Binding Location}"/>
+                </StackLayout>
+          </telerikListView:ListViewTemplateCell>
+        </DataTemplate>
+      </telerikDataControls:RadListView.GroupHeaderTemplate>-->
+      <telerikDataControls:RadListView.ItemTemplate>
+        <DataTemplate>
+          <telerikListView:ListViewTemplateCell>
+            <telerikListView:ListViewTemplateCell.View>
+              <StackLayout HorizontalOptions="Center" Padding="10" BackgroundColor="Transparent">
+                <Label Text="{Binding BuildingName}" TextColor="#00d0d2"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Column="1">
+                  <Label TextColor="Gray" Text="Client Name: "/>
+                  <Label TextColor="Gray" Text="{Binding ClientName}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Column="2">
+                  <Label TextColor="Gray" Text="Sync: "/>
+                  <Label TextColor="Gray" Text="{Binding sync}"/>
+                </StackLayout>
+              </StackLayout>
+            </telerikListView:ListViewTemplateCell.View>
+          </telerikListView:ListViewTemplateCell>
+        </DataTemplate>
+      </telerikDataControls:RadListView.ItemTemplate>
+
+      <telerikDataControls:RadListView.ItemSwipeContentTemplate>
+        <DataTemplate>
+          <Grid BackgroundColor="Black">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="300"/>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="300"/>            
+            </Grid.ColumnDefinitions>
+            
+            <!--<Button Text="Edit" TextColor="White" BackgroundColor="#84472B" Clicked="IncreaseButtonClicked"/>-->
+            <Button Text="Delete" FontSize="Medium" TextColor="White" BackgroundColor="Red" Clicked="DecreaseButtonClicked"/>
+          </Grid>
+        </DataTemplate>
+      </telerikDataControls:RadListView.ItemSwipeContentTemplate>
+    </telerikDataControls:RadListView>
+  </Grid>
+  </ContentPage.Content>
+</ContentPage>

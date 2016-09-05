@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Portable;assembly=PPMApp.Portable"
+             x:Class="Portable.FCADeficiencyScreen" BackgroundImage="bg.jpg" Title="FCA Deficiency" Padding="11">
+  <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+    <StackLayout>
+      <Label Text="Description" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Detail}" HeightRequest="120" TextColor="White" ></Editor>
+      <Label Text="Quantity" TextColor="#00d0d2"></Label>
+      <Entry Placeholder="Enter Quantity" Text="{Binding Qty}" TextColor="White" Keyboard="Numeric"></Entry>
+      <Label Text="Unit" TextColor="#00d0d2"></Label>
+      <Entry Placeholder="Enter Unit" Text="{Binding Unit}" TextColor="White" Keyboard="Numeric"></Entry>
+      <Label Text="Building System" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Priority"
+            TextColor="White"
+            DisplayMemberPath="Name"
+            SelectedValuePath="Name"
+                    ItemsSource="{Binding PriorityList}"
+                    SelectedValue="{Binding Path=PLSelectedvalue, Mode=TwoWay}" />
+      <Label Text="Note" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Note}" HeightRequest="120" TextColor="White" ></Editor>
+      <Button Text="Next"
+							Command="{Binding SaveCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

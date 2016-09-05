@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Portable;assembly=PPMApp.Portable"
+             x:Class="Portable.LocationView" Title="Location" BackgroundImage="bg.jpg" Padding="11">
+  <ContentPage.Content>
+    <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">      
+    <StackLayout>
+      <!--<Label Text="Select Client: "></Label>-->     
+
+      <Label Text="{Binding PickClient}" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+				Title="Select Client"
+        TextColor="White"
+				DisplayMemberPath="Name"
+				SelectedValuePath="ID"
+                ItemsSource="{Binding ClientList}"
+                SelectedValue="{Binding Path=ClientSelectedValue, Mode=TwoWay}" />
+      
+
+      <Label Text="{Binding PickInstitution}" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+        TextColor="White"
+         Title="Select Institution"
+         DisplayMemberPath="ShortName"
+         SelectedValuePath="InstitutionID"
+                 ItemsSource="{Binding InstitutionsList}"
+                 SelectedValue="{Binding Path=InsSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="{Binding PickBuilding}" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+         Title="Select Building"
+         TextColor="White"
+         DisplayMemberPath="BuildingTypeName"
+         SelectedValuePath="BuildingTypeID"
+                 ItemsSource="{Binding BuildingList}"
+                 SelectedValue="{Binding Path=BuildingSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="{Binding PickJobType}" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+         Title="Select Job"
+         TextColor="White"
+         DisplayMemberPath="JobTypeName"
+         SelectedValuePath="JobTypeId"
+                 ItemsSource="{Binding JobTypeList}"
+                 SelectedValue="{Binding Path=JobTypeSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="{Binding PickJobStatus}" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+         Title="Select Job Status"
+         TextColor="White"
+         DisplayMemberPath="StatusName"
+         SelectedValuePath="JobStatusId"
+                 ItemsSource="{Binding JobStatusList}"
+                 SelectedValue="{Binding Path=JobStatusSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="Enter Job Detail" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding JobStatus}" TextColor="White" HeightRequest="120"></Editor>
+      <!--<Button Text="Take Picture"
+							Command="{Binding TakePictureCommand}" TextColor="#00d0d2"/>
+      <Button Text="Select Image from Picture Library" TextColor="#00d0d2"
+							Command="{Binding SelectPictureCommand}" />
+
+      <Image Source="{Binding ImageSource}"
+						 VerticalOptions="CenterAndExpand" />-->
+
+      <Button Text="Next"
+							Command="{Binding SaveCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>
+
+    </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>  
+</ContentPage>

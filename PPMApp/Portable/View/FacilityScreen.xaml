@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Portable;assembly=PPMApp.Portable"  
+             x:Class="Portable.FacilityScreen" BackgroundImage="bg.jpg" Padding="11">
+  <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+    <StackLayout VerticalOptions="StartAndExpand">
+      <Label Text="Building System" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Building System"
+            TextColor="#00d0d2"
+            DisplayMemberPath="BuildingSystemName"
+            SelectedValuePath="BuildingSystemID"
+                    ItemsSource="{Binding BuildingSystemList}"
+                    SelectedValue="{Binding Path=BSSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="Project" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Project"
+            TextColor="#00d0d2"
+            DisplayMemberPath="ProjectName"
+            SelectedValuePath="ProjectID"
+                    ItemsSource="{Binding ProjectList}"
+                    SelectedValue="{Binding Path=PLSelectedValue, Mode=TwoWay}" />
+      
+      <Label Text="Service Contract" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Service Contract"
+            TextColor="#00d0d2"
+            DisplayMemberPath="ServiceContractName"
+            SelectedValuePath="ServiceContractID"
+                    ItemsSource="{Binding ProjectList}"
+                    SelectedValue="{Binding Path=PLSelectedValue, Mode=TwoWay}" />
+      
+      <Label Text="Compliance" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Compliance"
+            TextColor="#00d0d2"
+            DisplayMemberPath="Name"
+            SelectedValuePath="Value"
+                    ItemsSource="{Binding ComplianceList}"
+                    SelectedValue="{Binding Path=CMSelectedValue, Mode=TwoWay}" />
+      <Label Text="Enter Detail" TextColor="#00d0d2"></Label>
+      <Editor Text="{Binding Detail}" TextColor="#00d0d2" HeightRequest="120"></Editor>
+
+      <Button Text="Commit" Command="{Binding SaveCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

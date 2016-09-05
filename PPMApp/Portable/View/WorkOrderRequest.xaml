@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Portable;assembly=PPMApp.Portable"      
+             x:Class="Portable.WorkOrderRequest" Title="Work Order Request" BackgroundImage="bg.jpg" Padding="11">
+  <ScrollView  Orientation = "Vertical" VerticalOptions="CenterAndExpand">
+    <StackLayout VerticalOptions="CenterAndExpand">
+      <Label Text="Building System" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Building System"
+            TextColor="#00d0d2"
+            DisplayMemberPath="BuildingSystemName"
+            SelectedValuePath="BuildingSystemID"
+                    ItemsSource="{Binding BuildingSystemList}"
+                    SelectedValue="{Binding Path=BSSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="Component" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Component"
+            TextColor="#00d0d2"
+            DisplayMemberPath="ComponentName"
+            SelectedValuePath="ComponentID"
+                    ItemsSource="{Binding ComponentList}"
+                    SelectedValue="{Binding Path=CPSelectedValue, Mode=TwoWay}" />
+
+      <Label Text="Requestor" TextColor="#00d0d2"></Label>
+      <Entry Text="{Binding Requestor}" TextColor="#00d0d2" ></Entry>
+
+      <Label Text="Priority" TextColor="#00d0d2"></Label>
+      <controls:BindablePicker
+            Title="Select Priority"
+            TextColor="#00d0d2"
+            DisplayMemberPath="Name"
+            SelectedValuePath="Name"
+                    ItemsSource="{Binding PriorityList}"
+                    SelectedValue="{Binding Path=PLSelectedvalue, Mode=TwoWay}" />
+      
+      <Button Text="Commit"
+							Command="{Binding SaveCommand}" BackgroundColor="#00d0d2" TextColor="Black" FontAttributes="Bold"/>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>
